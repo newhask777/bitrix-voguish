@@ -16,16 +16,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <title><?php $APPLICATION->ShowTitle(); ?></title>
 
     <?php
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/bootstrap.css");
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/style.css");
+    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/bootstrap.css");
+    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/style.css");
 
     CJSCore::Init(['jquery']);
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/responsiveslides.min.js");
+    Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . "/js/responsiveslides.min.js");
 
     Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1">');
     Asset::getInstance()->addString("<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>");
     Asset::getInstance()->addString("<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>");
-    Asset::getInstance()->addString('<link type="image/x-icon" href="' . SITE_TEMPLATE_PATH . '/favicon.ico" rel="shortcut icon" />');
+    Asset::getInstance()->addString('<link type="image/x-icon" href="' . DEFAULT_TEMPLATE_PATH . '/favicon.ico" rel="shortcut icon" />');
     ?>
 
 
@@ -51,11 +51,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- header -->
 <div class="header">
     <div class="container">
-<!--        <div class="logo">-->
-<!--            <a href="/"><img src="--><?php //=SITE_TEMPLATE_PATH;?><!--/images/logo.png" class="img-responsive" alt=""></a>-->
-<!---->
-<!--        </div>-->
-
         <?$APPLICATION->IncludeComponent(
             "bitrix:main.include",
             "",
@@ -81,10 +76,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             "ROOT_MENU_TYPE" => "main",	// Тип меню для первого уровня
             "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
         ),
-	false
-);?><br>
+            false
+        );?>
 
-
+        <!-- script-for-nav -->
         <script>
             $( "span.menu" ).click(function() {
                 $( ".head-nav ul" ).slideToggle(300, function() {
@@ -102,6 +97,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- header -->
 <div class="container">
     <div class="blog">
-
         <div class="blog-content">
             <div class="blog-content-left">

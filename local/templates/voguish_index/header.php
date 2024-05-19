@@ -10,22 +10,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
     <?php
-    use Bitrix\Main\Page\Asset;
-    $APPLICATION->ShowHead();
+        use Bitrix\Main\Page\Asset;
+        $APPLICATION->ShowHead();
     ?>
     <title><?php $APPLICATION->ShowTitle(); ?></title>
 
     <?php
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/bootstrap.css");
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/style.css");
+        Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/bootstrap.css");
+        Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/style.css");
 
-    CJSCore::Init(['jquery']);
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/responsiveslides.min.js");
+        CJSCore::Init(['jquery']);
+        Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . "/js/responsiveslides.min.js");
 
-    Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1">');
-    Asset::getInstance()->addString("<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>");
-    Asset::getInstance()->addString("<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>");
-    Asset::getInstance()->addString('<link type="image/x-icon" href="' . SITE_TEMPLATE_PATH . '/favicon.ico" rel="shortcut icon" />');
+        Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1">');
+        Asset::getInstance()->addString("<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>");
+        Asset::getInstance()->addString("<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>");
+    Asset::getInstance()->addString('<link type="image/x-icon" href="' . DEFAULT_TEMPLATE_PATH . '/favicon.ico" rel="shortcut icon" />');
     ?>
 
 
@@ -51,11 +51,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- header -->
 <div class="header">
     <div class="container">
-<!--        <div class="logo">-->
-<!--            <a href="/"><img src="--><?php //=SITE_TEMPLATE_PATH;?><!--/images/logo.png" class="img-responsive" alt=""></a>-->
-<!---->
-<!--        </div>-->
-
         <?$APPLICATION->IncludeComponent(
             "bitrix:main.include",
             "",
@@ -68,22 +63,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         );?>
 
         <?$APPLICATION->IncludeComponent("bitrix:menu", "main_menu", Array(
-            "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-            "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
-            "DELAY" => "N",	// Откладывать выполнение шаблона меню
-            "MAX_LEVEL" => "1",	// Уровень вложенности меню
-            "MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
-                0 => "",
-            ),
-            "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-            "MENU_CACHE_TYPE" => "N",	// Тип кеширования
-            "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-            "ROOT_MENU_TYPE" => "main",	// Тип меню для первого уровня
-            "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-        ),
+	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"MAX_LEVEL" => "1",	// Уровень вложенности меню
+		"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+			0 => "",
+		),
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"ROOT_MENU_TYPE" => "main",	// Тип меню для первого уровня
+		"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+	),
 	false
-);?><br>
-
+);?>
 
         <!-- script-for-nav -->
         <script>
