@@ -1950,8 +1950,13 @@ div.register-bottom-grid {
 	.single-top {
 		width: 72%;
 	}
-	.single-top h2 {
-		font-size: 1.4em;
+	.single-top h2,
+	.respon h2{
+		color: #f53f1a;
+		font-weight: 700;
+		font-size: 1.5em;
+		margin-bottom: 1em;
+		font-family: 'Libre Baskerville', serif;
 	}
 	a.reply {
 		font-size: 1em;
