@@ -1,6 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Новости банка");
+$APPLICATION->SetPageProperty("keywords_inner", "Voguish - сайт моды");
+$APPLICATION->SetPageProperty("title", "Voguish - сайт моды");
+$APPLICATION->SetPageProperty("keywords", "Voguish - сайт моды");
+$APPLICATION->SetPageProperty("description", "Voguish - сайт моды");
+$APPLICATION->SetTitle("Voguish - сайт моды");
 ?>
 
     <!-- banner -->

@@ -16,7 +16,11 @@ $this->setFrameMode(true);
 
     <div class="blog-aricals">
         <?php foreach($arResult["ITEMS"] as $arItem): ?>
-            <div class="blog-artical">
+            <?
+            $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+            $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+            ?>
+            <div class="blog-artical" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                 <div class="blog-artical-info">
                     <div class="blog-artical-info-img">
                         <a href="<?=$arItem['DETAIL_PAGE_URL'];?>"><img src="<?=$arItem['DETAIL_PICTURE']['SRC'];?>" title="post-name"></a>
@@ -31,7 +35,7 @@ $this->setFrameMode(true);
                     </div>
                     <div class="artical-links">
                         <ul>
-                            <li><small> </small><span><?=$arItem['ACTIVE_FROM'];?></span></li>
+                            <li><small> </small><span><?=$arItem['DISPLAY_ACTIVE_FROM'];?></span></li>
                             <li><a href="#"><small class="admin"> </small><span><?=$arItem['PROPERTIES']['AUTHOR']['VALUE'];?></span></a></li>
                             <li><a href="#"><small class="no"> </small><span>No comments</span></a></li>
                             <li><a href="#"><small class="posts"> </small><span>View posts: <?=$arItem['SHOW_COUNTER'] ? $arItem['SHOW_COUNTER'] : 0;?></span></a></li>
