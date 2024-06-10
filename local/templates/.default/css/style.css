@@ -1236,7 +1236,7 @@ i.adm1{
 	padding:2em;
 }
 .single-top p,
-.blog-content-left p{
+.blog-content p{
 	color:#302e2e;
 	font-size: 1em;
 	font-weight: 400;
@@ -1344,7 +1344,8 @@ a.reply:hover{
 .comment input[type="submit"]:hover{
 	background:#26313b;
 }
-.single-top h2 {
+.single-top h2,
+.respon h2{
 	color:#f53f1a;
 	font-weight: 700;
 	font-size: 1.5em;
@@ -1713,6 +1714,7 @@ div.register-bottom-grid {
 	.nam-matis h3 {
 		font-size: 1.3em;
 	}
+
 	.blo-top li a {
 		font-size: 1em;
 		padding: 1em 0;
@@ -1950,13 +1952,8 @@ div.register-bottom-grid {
 	.single-top {
 		width: 72%;
 	}
-	.single-top h2,
-	.respon h2{
-		color: #f53f1a;
-		font-weight: 700;
-		font-size: 1.5em;
-		margin-bottom: 1em;
-		font-family: 'Libre Baskerville', serif;
+	.single-top h2 {
+		font-size: 1.4em;
 	}
 	a.reply {
 		font-size: 1em;
@@ -2420,4 +2417,8 @@ div.register-bottom-grid {
 	a.b-home {
 		font-size: 0.8125em;
 	}
+}
+
+.blo-top ul{
+	padding: 0;
 }
