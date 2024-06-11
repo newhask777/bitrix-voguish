@@ -17,18 +17,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <?php
     Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/bootstrap.css");
-    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/fancybox/jquery.fancybox.css");
     Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/style.css");
 
     CJSCore::Init(['jquery']);
     Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . "/js/responsiveslides.min.js");
-    Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . "/fancybox/jquery.fancybox.pack.js");
 
     Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1">');
     Asset::getInstance()->addString("<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>");
     Asset::getInstance()->addString("<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>");
     Asset::getInstance()->addString('<link type="image/x-icon" href="' . DEFAULT_TEMPLATE_PATH . '/favicon.ico" rel="shortcut icon" />');
     ?>
+
+
 
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
@@ -96,6 +96,4 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <!-- header -->
 <div class="container">
-    <div class="blog">
-        <div class="blog-content">
-            <div class="blog-content-left">
+    <div class="contact">

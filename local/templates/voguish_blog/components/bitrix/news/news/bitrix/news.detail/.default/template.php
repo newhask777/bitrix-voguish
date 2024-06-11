@@ -18,15 +18,24 @@ $this->setFrameMode(true);
 
 <?=$arResult['DETAIL_TEXT'];?>
 
+<?php if(!empty($arResult['PROPERTIES']['GALLERY']['VALUE'])): ?>
+	<?php foreach($arResult['PROPERTIES']['GALLERY']['VALUE'] as $photo): ?>
+		<a class="fancybox" rel="group" href="<?=CFile::GetPath($photo);?>"><img src="<?=CFile::GetPath($photo);?>" alt="" width="200"></a>
+	<?php endforeach; ?>
+<?php endif; ?>
+
 <div class="artical-links">
 	<ul>
 		<li><small> </small><span><?=$arResult['DISPLAY_ACTIVE_FROM'];?></span></li>
 		<li><a href="#"><small class="admin"> </small><span><?=$arResult['PROPERTIES']['AUTHOR']['VALUE'];?></span></a></li>
-		<li><a href="#"><small class="no"> </small><span>No comments</span></a></li>
+		<li><a href="#"><small class="no"> </small><span><?= $arResult['PROPERTIES']['BLOG_COMMENTS_CNT']['VALUE'] ? $arResult['PROPERTIES']['BLOG_COMMENTS_CNT']['VALUE'] : 'No comments';?></span></a></li>
 		<li><a href="#"><small class="posts"> </small><span>View posts: <?=$arResult['SHOW_COUNTER'] ? $arResult['SHOW_COUNTER'] : 0;?></span></a></li>
 		<li><a href="<?=$arResult['DETAIL_PAGE_URL'];?>"><small class="link"> </small><span>permalink</span></a></li>
 	</ul>
 </div>
 
-
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>

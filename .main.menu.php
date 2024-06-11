@@ -34,6 +34,20 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Login", 
+		"/auth/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>
